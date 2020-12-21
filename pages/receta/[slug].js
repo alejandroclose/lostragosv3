@@ -1,19 +1,19 @@
 import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '../../components/container'
-import PostBody from '../../components/post-body'
+import RecipeBody from '../../components/recipe-body'
 import Header from '../../components/header'
-import PostHeader from '../../components/post-header'
+import RecipeHeader from '../../components/recipe-header'
 import Layout from '../../components/layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
-import PostTitle from '../../components/post-title'
+import { getrecipeBySlug, getAllrecipes } from '../../lib/api'
+import RecipeTitle from '../../components/recipe-title'
 import Head from 'next/head'
 import { CMS_NAME } from '../../lib/constants'
 import markdownToHtml from '../../lib/markdownToHtml'
 
-export default function Post({ post, morePosts, preview }) {
+export default function recipe({ recipe, morerecipes, preview }) {
   const router = useRouter()
-  if (!router.isFallback && !post?.slug) {
+  if (!router.isFallback && !recipe?.slug) {
     return <ErrorPage statusCode={404} />
   }
   return (
@@ -21,23 +21,23 @@ export default function Post({ post, morePosts, preview }) {
       <Container>
         <Header />
         {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
+          <RecipeTitle>Loading…</RecipeTitle>
         ) : (
           <>
             <article className="mb-32">
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {recipe.title} | Next.js Blog Example with {CMS_NAME}
                 </title>
-                <meta property="og:image" content={post.ogImage.url} />
+                <meta property="og:image" content={recipe.ogImage.url} />
               </Head>
-              <PostHeader
-                title={post.title}
-                coverImage={post.coverImage}
-                date={post.date}
-                author={post.author}
+              <RecipeHeader
+                title={recipe.title}
+                coverImage={recipe.coverImage}
+                date={recipe.date}
+                author={recipe.author}
               />
-              <PostBody content={post.content} />
+              <RecipeBody content={recipe.content} />
             </article>
           </>
         )}
@@ -47,7 +47,7 @@ export default function Post({ post, morePosts, preview }) {
 }
 
 export async function getStaticProps({ params }) {
-  const post = getPostBySlug(params.slug, [
+  const recipe = getrecipeBySlug(params.slug, [
     'title',
     'date',
     'slug',
@@ -56,12 +56,12 @@ export async function getStaticProps({ params }) {
     'ogImage',
     'coverImage',
   ])
-  const content = await markdownToHtml(post.content || '')
+  const content = await markdownToHtml(recipe.content || '')
 
   return {
     props: {
-      post: {
-        ...post,
+      recipe: {
+        ...recipe,
         content,
       },
     },
@@ -69,13 +69,13 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-  const posts = getAllPosts(['slug'])
+  const recipes = getAllrecipes(['slug'])
 
   return {
-    paths: posts.map((post) => {
+    paths: recipes.map((recipe) => {
       return {
         params: {
-          slug: post.slug,
+          slug: recipe.slug,
         },
       }
     }),

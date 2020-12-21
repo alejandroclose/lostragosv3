@@ -1,12 +1,12 @@
-import Avatar from '../components/avatar'
-import DateFormatter from '../components/date-formatter'
-import CoverImage from '../components/cover-image'
-import PostTitle from '../components/post-title'
+import Avatar from './avatar'
+import DateFormatter from './date-formatter'
+import CoverImage from './cover-image'
+import RecipeTitle from './recipe-title'
 
-export default function PostHeader({ title, coverImage, date, author }) {
+export default function RecipeHeader({ title, coverImage, date, author }) {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
+      <RecipeTitle>{title}</RecipeTitle>
       <div className="hidden md:block md:mb-12">
         <Avatar name={author.name} picture={author.picture} />
       </div>

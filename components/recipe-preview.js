@@ -1,9 +1,9 @@
-import Avatar from '../components/avatar'
-import DateFormatter from '../components/date-formatter'
+import Avatar from './avatar'
+import DateFormatter from './date-formatter'
 import CoverImage from './cover-image'
 import Link from 'next/link'
 
-export default function PostPreview({
+export default function RecipePreview({
   title,
   coverImage,
   date,
@@ -17,7 +17,7 @@ export default function PostPreview({
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
       <h3 className="text-3xl mb-3 leading-snug">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
+        <Link as={`/receta/${slug}`} href="/receta/[slug]">
           <a className="hover:underline">{title}</a>
         </Link>
       </h3>

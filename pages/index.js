@@ -1,15 +1,15 @@
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
-import HeroPost from '../components/hero-post'
+import Herorecipe from '../components/hero-recipe'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
+import { getAllrecipes } from '../lib/api'
 import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 
-export default function Index({ allPosts }) {
-  const heroPost = allPosts[0]
-  const morePosts = allPosts.slice(1)
+export default function Index({ allrecipes }) {
+  const herorecipe = allrecipes[0]
+  const morerecipes = allrecipes.slice(1)
   return (
     <>
       <Layout>
@@ -18,17 +18,17 @@ export default function Index({ allPosts }) {
         </Head>
         <Container>
           <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              author={heroPost.author}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
+          {herorecipe && (
+            <Herorecipe
+              title={herorecipe.title}
+              coverImage={herorecipe.coverImage}
+              date={herorecipe.date}
+              author={herorecipe.author}
+              slug={herorecipe.slug}
+              excerpt={herorecipe.excerpt}
             />
           )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {morerecipes.length > 0 && <MoreStories recipes={morerecipes} />}
         </Container>
       </Layout>
     </>
@@ -36,7 +36,7 @@ export default function Index({ allPosts }) {
 }
 
 export async function getStaticProps() {
-  const allPosts = getAllPosts([
+  const allrecipes = getAllrecipes([
     'title',
     'date',
     'slug',
@@ -46,6 +46,6 @@ export async function getStaticProps() {
   ])
 
   return {
-    props: { allPosts },
+    props: { allrecipes },
   }
 }
