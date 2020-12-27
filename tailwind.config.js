@@ -9,6 +9,9 @@ module.exports = {
         success: '#0070f3',
         cyan: '#79FFE1',
       },
+      height: {
+        96: '24rem'
+      },
       spacing: {
         28: '7rem',
       },
@@ -28,6 +31,16 @@ module.exports = {
         small: '0 5px 10px rgba(0, 0, 0, 0.12)',
         medium: '0 8px 30px rgba(0, 0, 0, 0.12)',
       },
+      inset: {
+        '-30':'-7.5rem',
+        '-56':'-14rem',
+      },
+      fontFamily: {
+        'montserrat': ['Montserrat']
+      },
+      backgroundImage: {
+        'cover1': "url('/assets/blog/cover1.jpg')",
+      }
     },
   },
 }

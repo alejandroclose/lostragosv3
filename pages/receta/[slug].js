@@ -18,7 +18,6 @@ export default function recipe({ recipe, morerecipes, preview }) {
   }
   return (
     <Layout preview={preview}>
-      <Container>
         <Header />
         {router.isFallback ? (
           <RecipeTitle>Loading…</RecipeTitle>
@@ -27,7 +26,7 @@ export default function recipe({ recipe, morerecipes, preview }) {
             <article className="mb-32">
               <Head>
                 <title>
-                  {recipe.title} | Next.js Blog Example with {CMS_NAME}
+                  {recipe.title} | losTRAGOS.com | Recetas de cócteles
                 </title>
                 <meta property="og:image" content={recipe.ogImage.url} />
               </Head>
@@ -36,12 +35,13 @@ export default function recipe({ recipe, morerecipes, preview }) {
                 coverImage={recipe.coverImage}
                 date={recipe.date}
                 author={recipe.author}
-              />
+                />
+                <Container>
               <RecipeBody content={recipe.content} />
+            </Container>
             </article>
           </>
         )}
-      </Container>
     </Layout>
   )
 }

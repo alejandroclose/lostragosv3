@@ -6,12 +6,11 @@ import RecipeTitle from './recipe-title'
 export default function RecipeHeader({ title, coverImage, date, author }) {
   return (
     <>
-      <RecipeTitle>{title}</RecipeTitle>
       <div className="hidden md:block md:mb-12">
         <Avatar name={author.name} picture={author.picture} />
       </div>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
+        <CoverImage title={title} src={coverImage}><RecipeTitle>{title}</RecipeTitle></CoverImage>
       </div>
       <div className="max-w-2xl mx-auto">
         <div className="block md:hidden mb-6">
