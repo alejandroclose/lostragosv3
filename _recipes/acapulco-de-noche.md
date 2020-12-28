@@ -7,12 +7,12 @@ author:
   name: losTRAGOS
   picture: '/assets/blog/authors/jj.jpeg'
 ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
+  url: '/assets/blog/images/acapulco-de-noche.jpg'
 ---
 
-  Perfecta combinación de tequila, ron y jugo (zumo) de naranja.
-
 ![image](/assets/blog/images/acapulco-de-noche.jpg)
+
+  Perfecta combinación de tequila, ron y jugo (zumo) de naranja.
 
 ## Ingredientes
 

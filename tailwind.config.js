@@ -40,6 +40,9 @@ module.exports = {
       },
       backgroundImage: {
         'cover1': "url('/assets/blog/cover1.jpg')",
+      },
+      maxWidth: {
+        '32': '8rem'
       }
     },
   },

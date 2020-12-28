@@ -16,3 +16,7 @@
 .markdown h3 {
   @apply text-2xl mt-8 mb-4 leading-snug;
 }
+
+.markdown p > img {
+  @apply w-4/5 flex justify-center items-center;
+}
