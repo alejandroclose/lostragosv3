@@ -6,13 +6,13 @@ export default function CoverImage({ title, src, slug, children }) {
     <img
       src={src}
       alt={`Imágen de cabecera de ${title}`}
-      className={cn('shadow-small w-full h-40 sm:h-96', {
+      className={cn('shadow-small w-full h-40', {
         'hover:shadow-medium transition-shadow duration-200': slug,
       })}
     />
   )
   return (
-    <div className="sm:mx-0 z-0 bg-cover1 sm:h-96" >
+    <div className="bg-cover1 h-40" >
       {slug ? (
         <Link as={`/receta/${slug}`} href="/receta/[slug]">
           <a aria-label={title}>{image}</a>

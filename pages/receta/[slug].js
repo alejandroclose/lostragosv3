@@ -23,7 +23,7 @@ export default function recipe({ recipe, morerecipes, preview }) {
           <RecipeTitle>Loading…</RecipeTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article className="mb-32 bg-cream">
               <Head>
                 <title>
                   {recipe.title} | losTRAGOS.com | Recetas de cócteles

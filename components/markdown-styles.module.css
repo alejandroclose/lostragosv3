@@ -1,22 +1,25 @@
 .markdown {
-  @apply text-lg leading-relaxed;
+  @apply text-lg leading-relaxed flex flex-col justify-center;
 }
 
-.markdown p,
 .markdown ul,
 .markdown ol,
 .markdown blockquote {
   @apply my-6;
 }
 
+.markdown p {
+  @apply w-11/12 flex justify-center self-center mx-0 bg-white;
+}
+
 .markdown h2 {
-  @apply text-3xl mt-12 mb-4 leading-snug;
+  @apply text-3xl w-11/12 pt-12 pb-4 leading-snug w-11/12 self-center bg-white;
 }
 
 .markdown h3 {
-  @apply text-2xl mt-8 mb-4 leading-snug;
+  @apply text-2xl mt-8 mb-4 self-center leading-snug;
 }
 
-.markdown p > img {
-  @apply w-4/5 flex justify-center items-center;
+.markdown img {
+  @apply w-full p-16 flex justify-center self-center mb-8 bg-white;
 }

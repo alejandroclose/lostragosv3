@@ -8,6 +8,7 @@ module.exports = {
         'accent-7': '#333',
         success: '#0070f3',
         cyan: '#79FFE1',
+        cream: '#F9F6EF'
       },
       height: {
         96: '24rem'
